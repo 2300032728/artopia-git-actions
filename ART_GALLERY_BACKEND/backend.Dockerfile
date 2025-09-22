@@ -11,7 +11,7 @@ RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 
 RUN cp target/*.jar app.jar
 
-FROM eclipse-temurin:21-jd
+FROM eclipse-temurin:21-jdk
 WORKDIR /app
 
 COPY --from=builder /app/app.jar app.jar
